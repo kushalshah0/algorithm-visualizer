@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────── Global Theme Transitions ───────── */
+html {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* ───────── Range Slider ───────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Track - Light */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: #c7d2fe;
+}
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: #c7d2fe;
+}
+
+/* Track - Dark */
+.dark input[type="range"]::-webkit-slider-runnable-track {
+  background: #312e81;
+}
+.dark input[type="range"]::-moz-range-track {
+  background: #312e81;
+}
+
+/* Thumb - Light */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #6366f1;
+  border: 3px solid #ffffff;
+  margin-top: -6px;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.35), 0 0 0 1px rgba(99, 102, 241, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #6366f1;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.35), 0 0 0 1px rgba(99, 102, 241, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Thumb - Dark */
+.dark input[type="range"]::-webkit-slider-thumb {
+  background: #818cf8;
+  border: 3px solid #1e1b4b;
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.4);
+}
+.dark input[type="range"]::-moz-range-thumb {
+  background: #818cf8;
+  border: 3px solid #1e1b4b;
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.4);
+}
+
+/* Thumb Hover */
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* ───────── Scrollbar ───────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* ───────── Misc ───────── */
+button {
+  user-select: none;
+}
+
+/* Bar chart bar glow for comparing / swapping */
+.bar-glow-amber {
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+}
+.bar-glow-rose {
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.5);
+}
+.bar-glow-purple {
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.45);
+}
+.bar-glow-sky {
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.45);
+}
+.bar-glow-emerald {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+}
